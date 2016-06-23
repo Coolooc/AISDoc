@@ -1,0 +1,7 @@
+.classpath
+.settings/
+backup/
+.project
+build/
+*.7z
+*.sql

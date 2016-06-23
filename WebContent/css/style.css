@@ -1,0 +1,186 @@
+/*@import url(https://fonts.googleapis.com/css?family=Roboto);*/
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);*/
+
+body {
+	/*font-family: 'Roboto', sans-serif;*/
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+  	/*background-color: #eee;*//
+}
+
+/* navbar */
+.navbar {
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+/* login */
+.form-login {
+  text-align: center;
+}
+
+.form-login-control {
+	padding: 10px;
+	font-size: 16px;
+	width: 200px;
+	margin: 3px;
+	border-radius: 10px;
+}
+
+.form-login-control2 {
+	padding: 10px;
+	font-size: 16px;
+	width: 410px;
+	margin: 3px;
+	border-radius: 10px;
+}
+
+.form-login-control-btn {
+	margin: 3px;
+	width: 410px;
+	border-radius: 10px;
+}
+
+/* reg */
+.form-reg-control {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+/* search */
+.form-search {
+  text-align: center;
+}
+
+.form-search-control {
+	padding: 10px;
+	font-size: 16px;
+	width: 200px;
+	margin: 3px;
+	border-radius: 10px;
+}
+
+.form-search-btn {
+	margin: 3px;
+	border-radius: 10px;
+}
+
+/* search table  */
+.table-scroll {
+  overflow: auto; /* Добавляем полосы прокрутки */
+  text-align: center;
+}
+
+.table-scroll th {
+	text-align: center;
+}
+
+/* add-delo */
+.form-add-delo {
+  text-align: center;
+}
+
+.form-add-delo-control {
+	padding: 10px;
+	font-size: 16px;
+	width: 200px;
+	margin: 3px;
+	border-radius: 10px;
+}
+
+.form-add-delo-control2 {
+	padding: 10px;
+	font-size: 16px;
+	width: 410px;
+	margin: 3px;
+	border-radius: 10px;
+}
+
+.form-add-delo-control-btn {
+	margin: 3px;
+	width: 410px;
+	border-radius: 10px;
+}
+
+/* alert */
+.alert-center {
+	text-align: center;
+	border-radius: 10px;
+}
+
+/*
+.form-search {
+  display: block;
+  position: relative;
+  text-align: center;
+
+
+@media screen and (max-width: 600px) {
+  .form-search-control {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+}}
+*/
+
+/* chart */
+.chart-center {
+	width: 500px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.ltr { margin: auto; }
+
+/* statistics */
+.form-statistics {
+  text-align: center;
+  margin: 10px;
+}
+
+.form-statistics-select {
+	padding: 10px;
+	font-size: 16px;
+	width: 100px;
+	margin: 3px;
+	border-radius: 10px
+}
+
+.form-statistics-btn {
+	margin: 3px;
+	border-radius: 10px;
+}
+
+.div-statistics-center {
+	text-align: center;	
+}
+
+/* well */
+.well {
+	border-radius: 10px;
+}
+
+/*  */
+input { 
+	outline: none; 
+}
+
+button { 
+	outline: none!important; 
+}
+
+select { 
+	outline: none; 
+}
+
+/* main-oyd */
+.div-main-oyd-center {
+	text-align: center;	
+}
+
+.main-oyd-btn {
+	margin: 3px;
+	border-radius: 10px;
+}

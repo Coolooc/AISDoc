@@ -37,4 +37,16 @@ public class ZakazEJB {
 		return (List<Zakaz>) query.getResultList();
 	}
     
+    public void zakazDone(String vhodnoiNomer) {
+    	Query query = em.createQuery("UPDATE Zakaz z SET z.status = 1 WHERE z.vhodnoiNomer = :vhodnoiNomer");
+    	int update = query.setParameter("vhodnoiNomer", Integer.valueOf(vhodnoiNomer)).executeUpdate();
+    	/*
+    	 * Integer.valueOf(vhodnoiNomer)
+    	 *  Query query = em.createQuery(
+      "UPDATE Country SET population = population * 11 / 10 " +
+      "WHERE c.population < :p");
+  int updateCount = query.setParameter(p, 100000).executeUpdate();
+    	 */
+	}
+    
 }

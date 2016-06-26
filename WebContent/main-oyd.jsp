@@ -13,7 +13,7 @@
 <body>
 <%
 //сделать ограничение на ОИЗ, чтобы ваще не зашёл сюда.ы
-if(session.getAttribute("sotrydnik")==null || session.getAttribute("sotrydnik")=="") {
+if(session.getAttribute("sotrydnik").toString()==null || session.getAttribute("sotrydnik").toString()=="") {
 	response.sendRedirect("login.jsp");
 }
 %>
@@ -37,7 +37,7 @@ if(session.getAttribute("sotrydnik")==null || session.getAttribute("sotrydnik")=
 					<li><a href="orders.jsp">Заказы</a></li>
 	            </ul>
 	            <ul class="nav navbar-nav navbar-right">
-	              <li class="active"><a href="#"><%= session.getAttribute("FIO") %></a></li>
+	              <li class="active"><a href="#"><%= session.getAttribute("FIO").toString() %></a></li>
 	              <li><a href="exit.jsp">Выход</a></li>
 	            </ul>
           	</div>
@@ -45,7 +45,7 @@ if(session.getAttribute("sotrydnik")==null || session.getAttribute("sotrydnik")=
 	</nav>
   	<div class="well">
   		<div class="div-main-oyd-center">
-	        <h2>Здравствуйте <%= session.getAttribute("FIO") %></h2>
+	        <h2>Здравствуйте <%= session.getAttribute("FIO").toString() %></h2>
 	        <div class="alert alert-info alert-center" role="alert">Для продолжения работы с системой выберите направление.</div>
 	        <a href="search.jsp"><button class="btn btn-lg btn-primary main-oyd-btn" type="button">Поиск дел</button></a>
 	        <a href="add-delo.jsp"><button class="btn btn-lg btn-primary main-oyd-btn" type="button">Добавление дел</button></a>

@@ -16,7 +16,7 @@
 <body>
 <%
 //сделать ограничение на ОИЗ, чтобы ваще не зашёл сюда.ы
-if(session.getAttribute("sotrydnik")==null || session.getAttribute("sotrydnik")=="") {
+if(session.getAttribute("sotrydnik").toString()==null || session.getAttribute("sotrydnik").toString()=="") {
 	response.sendRedirect("login.jsp");
 }
 %>
@@ -40,7 +40,7 @@ if(session.getAttribute("sotrydnik")==null || session.getAttribute("sotrydnik")=
 					<li><a href="orders.jsp">Заказы</a></li>
 	            </ul>
 	            <ul class="nav navbar-nav navbar-right">
-	              <li class="active"><a href="#"><%= session.getAttribute("FIO") %></a></li>
+	              <li class="active"><a href="#"><%= session.getAttribute("FIO").toString() %></a></li>
 	              <li><a href="exit.jsp">Выход</a></li>
 	            </ul>
           	</div>

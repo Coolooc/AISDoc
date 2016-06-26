@@ -13,10 +13,10 @@
 try {
 	session = request.getSession();
 	
-	if(session.getAttribute("sotrydnik").equals("oyd")) {
+	if(session.getAttribute("sotrydnik").toString().equals("oyd")) {
 		response.sendRedirect("main-oyd.jsp");
 	}
-	else if(session.getAttribute("sotrydnik").equals("oiz")) {
+	else if(session.getAttribute("sotrydnik").toString().equals("oiz")) {
 		response.sendRedirect("main-oiz.jsp");
 	}
 	

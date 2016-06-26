@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>АИС Док | Поиск дел по топографии</title>
+    <title>АИС Док | Поиск заказанного дела по топографии</title>
 </head>
 <body>
 <%
@@ -33,42 +33,34 @@ if(session.getAttribute("sotrydnik").toString()==null || session.getAttribute("s
          	<div id="navbar" class="navbar-collapse collapse">
 	            <ul class="nav navbar-nav">
 					<li><a href="main-oyd.jsp">Главная</a></li>
-					<li class="active"><a href="search.jsp">Поиск дел</a></li>
+					<li><a href="search.jsp">Поиск дел</a></li>
 					<li><a href="add-delo.jsp">Добавление дел</a></li>
 					<li><a href="statistics.jsp">Статистика</a></li>
-					<li><a href="orders.jsp">Заказы</a></li>
+					<li class="active"><a href="orders.jsp">Заказы</a></li>
 	            </ul>
 	            <ul class="nav navbar-nav navbar-right">
-	              <li class="active"><a href="#"><%= session.getAttribute("FIO").toString() %></a></li>
+	              <li><a href="#"><%= session.getAttribute("FIO").toString() %></a></li>
 	              <li><a href="exit.jsp">Выход</a></li>
 	            </ul>
           	</div>
         </div>
 	</nav>
 	<div class="well">
-		<div class="alert alert-info alert-center" role="alert">Результат поиска</div>
-		<!-- 
-		<div class="alert alert-success" role="alert">
-        	<strong>Успешно!</strong> по запросу было найдено хх дел.
-      	</div>
-      	<div class="alert alert-danger" role="alert">
-        	<strong>Oh snap!</strong> Change a few things up and try submitting again.
-      	</div>
- 		-->
+		<div class="alert alert-info alert-center" role="alert">Результат поиска заказа</div>
 <%
+String vhodnoiNomer = request.getParameter("vhodnoiNomer");
+session.setAttribute("sessionVhodnoiNomer", vhodnoiNomer);
 String nomerFond = request.getParameter("nomerFond");
 String nomerOpis = request.getParameter("nomerOpis");
 String nomerDela = request.getParameter("nomerDela");
 
-if(nomerFond!=null && nomerFond!="" && nomerOpis!=null && nomerOpis!="" && nomerDela!=null && nomerDela!="" ) {
+if(vhodnoiNomer!=null && vhodnoiNomer!="" && nomerFond!=null && nomerFond!="" && nomerOpis!=null && nomerOpis!="" && nomerDela!=null && nomerDela!="" ) {
 	
 	Context ctx = new InitialContext();
 	TopografiyaEJB topografiyaEJB = (TopografiyaEJB) ctx.lookup ("java:global/AISDoc/TopografiyaEJB");
 	
 	try {
-		Topografiya topografiya = topografiyaEJB.findDelo(nomerFond, nomerOpis, nomerDela);
-		//out.print(topografiya.getNomerFond());
-	
+		Topografiya topografiya = topografiyaEJB.findZakaz(nomerFond, nomerOpis, nomerDela);
 %>
 		<div class="table-scroll">
 		<table class="table table-striped">
@@ -107,8 +99,11 @@ if(nomerFond!=null && nomerFond!="" && nomerOpis!=null && nomerOpis!="" && nomer
 		out.println("</div>");
 	} 
 }
-%>
-		<a href="search.jsp"><button class="btn btn-lg btn-primary main-oyd-btn" type="button">Назад</button></a>
+%>		
+		<form action="orders-done.jsp" method="post">
+			<a href="orders.jsp"><button class="btn btn-lg btn-primary main-oyd-btn" type="button">Назад</button></a>
+			<button class="btn btn-lg btn-success main-oyd-btn" type="submit">Выполнить входной №<% out.println(vhodnoiNomer); %></button>
+		</form>
 	</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

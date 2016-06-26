@@ -40,6 +40,12 @@ public class TopografiyaEJB {
 		return (Topografiya) query.getSingleResult();
 	}
     
+    public Topografiya findZakaz(String nomerFond, String nomerOpis, String nomerDela) {
+		Query query = em.createQuery("SELECT t FROM Topografiya t WHERE t.nomerDela = :nomerDela");		
+		query.setParameter("nomerDela", Integer.valueOf(nomerDela));
+		return (Topografiya) query.getSingleResult();
+	}
+    
     public void addDelo(String nazvanieFonda, String nomerFond, String nomerOpis,
     					String nomerHranilishe, String nomerEtaj, String nomerStellaj,
     					String nomerPolka, String nomerDela, String zagolovokDela) {
